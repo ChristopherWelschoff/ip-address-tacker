@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="bg-[url(/bg-mobile.png)] bg-cover h-75 px-8">
+    <header className="bg-[url(/bg-mobile.png)] bg-cover h-75 px-2">
       <h1 className="font-medium text-2xl text-white text-center my-8">
         IP Address Tracker
       </h1>
