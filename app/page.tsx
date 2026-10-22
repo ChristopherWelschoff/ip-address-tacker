@@ -1,33 +1,5 @@
-import Image from "next/image";
+import Header from "@/components/Header";
 
 export default function Home() {
-  return (
-    <header className="bg-[url(/bg-mobile.png)] bg-cover h-75 px-8">
-      <h1 className="font-medium text-2xl text-white text-center my-8">
-        IP Address Tracker
-      </h1>
-      <form>
-        <label className="sr-only" htmlFor="search">
-          Search for IP Address or Domain
-        </label>
-        <div className="flex">
-          <input
-            placeholder="Search for any IP address or domain"
-            className="bg-white  flex-1 rounded-l-xl p-4"
-            type="search"
-            id="search"
-            name="search"
-          />
-          <button type="submit" className="bg-gray-950 rounded-r-xl p-4">
-            <Image
-              alt="search for ip"
-              src="/icon-arrow.svg"
-              width={11}
-              height={14}
-            />
-          </button>
-        </div>
-      </form>
-    </header>
-  );
+  return <Header />;
 }
