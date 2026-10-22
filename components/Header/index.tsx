@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="bg-[url(/bg-mobile.png)] bg-cover h-75 px-2">
+    <header className="md:bg-[url(/bg-desktop.png)] md:h-70 bg-[url(/bg-mobile.png)] bg-cover h-75 px-6">
       <h1 className="font-medium text-2xl text-white text-center my-8">
         IP Address Tracker
       </h1>
-      <form>
+      <form className=" max-w-xl mx-auto">
         <label className="sr-only" htmlFor="search">
           Search for IP Address or Domain
         </label>
