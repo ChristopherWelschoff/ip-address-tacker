@@ -18,7 +18,10 @@ export default function Header() {
             id="search"
             name="search"
           />
-          <button type="submit" className="bg-gray-950 rounded-r-xl p-4">
+          <button
+            type="submit"
+            className="bg-gray-950 rounded-r-xl p-4 cursor-pointer transition ease-in-out duration-300 hover:bg-gray-400"
+          >
             <Image
               alt="search for ip"
               src="/icon-arrow.svg"
