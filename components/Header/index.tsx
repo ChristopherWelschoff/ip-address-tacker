@@ -13,7 +13,7 @@ export default function Header() {
         <div className="flex">
           <input
             placeholder="Search for any IP address or domain"
-            className="bg-white  flex-1 rounded-l-xl p-4"
+            className="bg-white  flex-1 rounded-l-xl p-4 placeholder:text-sm md:placeholder:text-xl"
             type="search"
             id="search"
             name="search"
