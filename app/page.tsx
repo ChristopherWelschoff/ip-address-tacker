@@ -1,13 +1,9 @@
-import Header from "@/components/Header";
-import InfoCard from "@/components/InfoCard";
+import IpTracker from "@/components/IpTracker";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <main>
-        <InfoCard />
-      </main>
+      <IpTracker />
     </>
   );
 }

@@ -1,12 +1,29 @@
 import Image from "next/image";
 
-export default function Header() {
+type HeaderProps = {
+  onSearch: (query: string) => void;
+};
+
+export default function Header({ onSearch }: HeaderProps) {
+  function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const query = formData.get("search");
+
+    if (typeof query !== "string" || query.trim() === "") {
+      return;
+    }
+
+    onSearch(query.trim());
+  }
+
   return (
     <header className="md:bg-[url(/bg-desktop.png)] md:h-70 bg-[url(/bg-mobile.png)] bg-cover h-75 px-6">
       <h1 className="font-medium text-2xl text-white text-center my-8">
         IP Address Tracker
       </h1>
-      <form className=" max-w-xl mx-auto">
+      <form onSubmit={handleSubmit} className=" max-w-xl mx-auto">
         <label className="sr-only" htmlFor="search">
           Search for IP Address or Domain
         </label>
