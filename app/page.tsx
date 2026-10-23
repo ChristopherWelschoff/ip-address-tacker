@@ -1,9 +1,12 @@
 import IpTracker from "@/components/IpTracker";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
     <>
-      <IpTracker />
+      <Suspense fallback={<p>Loading...</p>}>
+        <IpTracker />
+      </Suspense>
     </>
   );
 }

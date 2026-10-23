@@ -1,10 +1,11 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-type HeaderProps = {
-  onSearch: (query: string) => void;
-};
+export default function Header() {
+  const router = useRouter();
 
-export default function Header({ onSearch }: HeaderProps) {
   function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -15,14 +16,17 @@ export default function Header({ onSearch }: HeaderProps) {
       return;
     }
 
-    onSearch(query.trim());
+    router.push(`/?query=${encodeURIComponent(query.trim())}`);
   }
 
   return (
     <header className="md:bg-[url(/bg-desktop.png)] md:h-70 bg-[url(/bg-mobile.png)] bg-cover h-75 px-6">
-      <h1 className="font-medium text-2xl text-white text-center my-8">
-        IP Address Tracker
-      </h1>
+      <Link href={"/"}>
+        <div className="flex flex-col text-center text-white my-6">
+          <h1 className="font-medium text-2xl">IP Address Tracker</h1>
+          <small className="text-white/80">Click to show your IP Address</small>
+        </div>
+      </Link>
       <form onSubmit={handleSubmit} className=" max-w-xl mx-auto">
         <label className="sr-only" htmlFor="search">
           Search for IP Address or Domain

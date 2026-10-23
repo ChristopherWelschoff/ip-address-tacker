@@ -1,13 +1,11 @@
 "use client";
 import Header from "../Header";
 import InfoCard from "../InfoCard";
-import { useEffect, useState } from "react";
 import type { IPifyResponse } from "@/types/IPify";
+import { useSearchParams } from "next/navigation";
+import useSWR from "swr";
 
-async function getGeoData(query?: string) {
-  const url = query
-    ? `/api/geolocation?query=${encodeURIComponent(query)}`
-    : "/api/geolocation";
+async function getGeoData(url: string) {
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error("Failed to fetch geolocation data");
@@ -17,31 +15,36 @@ async function getGeoData(query?: string) {
 }
 
 export default function IpTracker() {
-  const [geoData, setGeoData] = useState<IPifyResponse | null>(null);
+  const searchParams = useSearchParams();
+  const query = searchParams.get("query");
+  const url = query
+    ? `/api/geolocation?query=${encodeURIComponent(query)}`
+    : "/api/geolocation";
 
-  async function handleSearch(query: string) {
-    try {
-      const data = await getGeoData(query);
-      setGeoData(data);
-    } catch (error) {
-      //todo toast message for users
-      console.error(error);
-    }
+  const { data, error, isLoading } = useSWR<IPifyResponse>(url, getGeoData);
+
+  if (error) {
+    return (
+      <>
+        <Header />
+        <p>{error.message} </p>
+      </>
+    );
   }
-
-  useEffect(() => {
-    async function fetchGeoData() {
-      const data = await getGeoData();
-      setGeoData(data);
-    }
-    fetchGeoData();
-  }, []);
+  if (isLoading) {
+    return (
+      <>
+        <Header />
+        <p>Loading...</p>
+      </>
+    );
+  }
 
   return (
     <>
-      <Header onSearch={handleSearch} />
+      <Header />
       <main>
-        <InfoCard geoData={geoData} />
+        <InfoCard geoData={data ?? null} />
       </main>
     </>
   );
