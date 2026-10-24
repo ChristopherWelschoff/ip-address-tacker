@@ -28,7 +28,7 @@ export default function InfoCard({ geoData }: InfoCardProps) {
     },
   ];
   return (
-    <dl className="md:flex-row md:max-w-5xl md:mx-auto md:-mt-14 md:text-left md:divide-x md:divide-gray-400/30  flex flex-col gap-3 text-center bg-white p-6 rounded-2xl shadow-2xl -mt-30 mx-6">
+    <dl className="relative z-10 md:flex-row md:max-w-5xl md:mx-auto md:-mt-20 md:text-left md:divide-x md:divide-gray-400/30  flex flex-col gap-3 text-center bg-white p-6 rounded-2xl shadow-2xl -mt-30 mx-6">
       {infoItems.map((item) => (
         <InfoCardDetails key={item.label} {...item} />
       ))}

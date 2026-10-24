@@ -4,6 +4,11 @@ import InfoCard from "../InfoCard";
 import type { IPifyResponse } from "@/types/IPify";
 import { useSearchParams } from "next/navigation";
 import useSWR from "swr";
+import dynamic from "next/dynamic";
+
+const Map = dynamic(() => import("../Map"), {
+  ssr: false,
+});
 
 async function getGeoData(url: string) {
   const response = await fetch(url);
@@ -45,6 +50,7 @@ export default function IpTracker() {
       <Header />
       <main>
         <InfoCard geoData={data ?? null} />
+        {data && <Map lat={data.location.lat} lng={data.location.lng} />}
       </main>
     </>
   );

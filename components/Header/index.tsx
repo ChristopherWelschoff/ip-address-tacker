@@ -20,7 +20,7 @@ export default function Header() {
   }
 
   return (
-    <header className="md:bg-[url(/bg-desktop.png)] md:h-70 bg-[url(/bg-mobile.png)] bg-cover h-75 px-6">
+    <header className="z-10 md:bg-[url(/bg-desktop.png)] md:h-70 bg-[url(/bg-mobile.png)] bg-cover h-75 px-6">
       <Link href={"/"}>
         <div className="flex flex-col text-center text-white my-6">
           <h1 className="font-medium text-2xl">IP Address Tracker</h1>
