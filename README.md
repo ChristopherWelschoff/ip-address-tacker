@@ -91,4 +91,4 @@ I used Claude as a learning partner while building this project: explaining conc
 
 ## Developer
 
-- GitHub: ChristopherWelschoff
+- GitHub: [Christopher Welschoff](https://github.com/ChristopherWelschoff)
