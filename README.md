@@ -77,23 +77,18 @@ Open [http://localhost:3000](http://localhost:3000).
 ## What I learned
 
 - Writing route handlers in the Next.js App Router, and why the API key belongs on the server
-- Typing API responses, state and props with TypeScript, and narrowing types such as `FormDataEntryValue | null`
+- Typing API responses, state and props with TypeScript
 - Keeping the search term in the URL with `useSearchParams` and `useRouter`, and fetching with SWR
 - Why `useSearchParams` needs a `Suspense` boundary
 - Loading a browser-only library (Leaflet) with `next/dynamic` and `ssr: false`
 - Stacking order (`z-index`, `isolate`) when a card overlaps a map
 - Setting up a first CI workflow with GitHub Actions
 
-## Continued development
-
-- Read the visitor's IP from the `x-forwarded-for` header when deployed, so the first load shows the visitor's location and not the server's
-- Cache lookups to save API credits
-- Replace the demo-data fallback with a provider that has a larger free tier, if needed
 
 ## AI collaboration
 
 I used Claude as a learning partner while building this project: explaining concepts, pointing me to documentation and reviewing my code. I wrote the code myself and asked for hints instead of finished solutions.
 
-## Author
+## Developer
 
-- GitHub: _add your username_
+- GitHub: ChristopherWelschoff
