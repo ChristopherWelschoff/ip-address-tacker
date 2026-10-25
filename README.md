@@ -5,10 +5,9 @@ My solution to the [Frontend Mentor IP Address Tracker challenge](https://www.fr
 <img width="377" height="664" alt="image" src="https://github.com/user-attachments/assets/0ffe8708-e7d3-462c-959f-5c1093ce373d" />
 
 
-> TODO: add a screenshot (`screenshot.png`) and the links below.
 
-- Live site: _add URL_
-- Solution on Frontend Mentor: _add URL_
+
+
 
 ## Features
 
