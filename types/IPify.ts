@@ -8,7 +8,7 @@ export type IPifyResponse = {
     lng: number;
     postalCode: string;
     timezone: string;
-    geonameId: number;
+    geonameId?: number;
   };
   domains?: string[];
   as?: {
@@ -19,4 +19,5 @@ export type IPifyResponse = {
     type: string;
   };
   isp: string;
+  demo?: boolean;
 };
