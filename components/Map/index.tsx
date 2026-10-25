@@ -11,7 +11,6 @@ import L from "leaflet";
 import { useMap } from "react-leaflet/hooks";
 import { useEffect } from "react";
 
-
 const locationIcon = L.icon({
   iconUrl: "/icon-location.svg",
   iconSize: [46, 56],
@@ -27,7 +26,8 @@ function MapUpdater({ lat, lng }: MapProps) {
   const map = useMap();
 
   useEffect(() => {
-    map.setView([lat, lng]);
+    map.setView([lat, lng], map.getZoom(), { animate: false });
+    map.panBy([0, -100], { animate: false });
   }, [map, lat, lng]);
 
   return null;
@@ -36,12 +36,11 @@ function MapUpdater({ lat, lng }: MapProps) {
 export default function Map({ lat, lng }: MapProps) {
   return (
     <MapContainer
-      className="h-screen isolate -z-10 -mt-50 md:-mt-30"
+      className="md:h-[calc(100dvh-244px)] h-[calc(100dvh-290px)] isolate  -mt-50 md:-mt-30"
       center={[lat, lng]}
       zoom={13}
       scrollWheelZoom={true}
       zoomControl={false}
-    
     >
       <MapUpdater lat={lat} lng={lng} />
       <ZoomControl position="bottomright" />

@@ -49,6 +49,14 @@ export default function IpTracker() {
     <>
       <Header />
       <main>
+        {data?.demo && (
+          <p
+            className="md:text-xl absolute w-full z-100 text-l font-bold top-40  text-center"
+            role="status"
+          >
+            Demo data, not enough API tokens ...
+          </p>
+        )}
         <InfoCard geoData={data ?? null} />
         {data && <Map lat={data.location.lat} lng={data.location.lng} />}
       </main>
