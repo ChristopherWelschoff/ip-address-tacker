@@ -2,7 +2,8 @@
 
 My solution to the [Frontend Mentor IP Address Tracker challenge](https://www.frontendmentor.io), built with Next.js, TypeScript and Tailwind CSS. Search for any IP address or domain and see its location, timezone and ISP on a map.
 
-![Screenshot of the IP Address Tracker](./screenshot.png)
+![Screenshot of the IP Address Tracker](<img width="377" height="664" alt="image" src="https://github.com/user-attachments/assets/0ffe8708-e7d3-462c-959f-5c1093ce373d" />
+)
 
 > TODO: add a screenshot (`screenshot.png`) and the links below.
 
