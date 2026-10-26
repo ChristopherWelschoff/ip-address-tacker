@@ -81,7 +81,6 @@ Open [http://localhost:3000](http://localhost:3000).
 - Keeping the search term in the URL with `useSearchParams` and `useRouter`, and fetching with SWR
 - Why `useSearchParams` needs a `Suspense` boundary
 - Loading a browser-only library (Leaflet) with `next/dynamic` and `ssr: false`
-- Stacking order (`z-index`, `isolate`) when a card overlaps a map
 - Setting up a first CI workflow with GitHub Actions
 
 
