@@ -92,6 +92,6 @@ I used Claude as a learning partner while building this project: explaining conc
 
 - GitHub: [Christopher Welschoff](https://github.com/ChristopherWelschoff)
 
-## Deplooyment
+## Deployment
 
 [IP Tracker](https://ip-address-tacker-one.vercel.app/?query=bild.de)
